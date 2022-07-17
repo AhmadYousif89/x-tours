@@ -2,6 +2,7 @@
   "name": "x-tours",
   "version": "1.0.0",
   "description": "Landing page for X-tours co.",
+  "main": "index.html",
   "scripts": {
     "clean": "rimraf public",
     "serve": "browser-sync start --server public --files public",
