@@ -1,0 +1,131 @@
+@use '../abstracts' as *;
+
+.form {
+  &__group {
+    margin-bottom: 2rem;
+  }
+  .heading-second {
+    background-color: rgba($light-blue, 0.5);
+    font-size: 1.75rem;
+    padding: 0;
+  }
+
+  &__control {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    input {
+      display: block;
+      font: inherit;
+      color: $medium-gray;
+      width: 45%;
+      padding: 0.5rem 1rem;
+      border-radius: 3px 3px 0 0;
+      border: none;
+      border-bottom: 2px solid transparent;
+      background-color: rgba($white, 0.65);
+      transition: all 0.3s;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba($black, 0.3);
+        &:invalid {
+          border-bottom: 2px solid $dark-orange;
+        }
+      }
+      &:not(:focus) {
+        border-bottom: 2px solid rgba($black, 0.25);
+      }
+
+      &::placeholder {
+        font-size: 1rem;
+      }
+
+      &:valid {
+        border-bottom: 2px solid $dark-green;
+      }
+    }
+
+    label {
+      display: inline-block;
+      color: $medium-gray;
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+
+    input:placeholder-shown + label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-1rem);
+    }
+
+    // radio buttons
+    &-radio {
+      max-width: 50%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      input {
+        visibility: hidden;
+        width: 0;
+      }
+
+      label {
+        font-size: 1rem;
+        padding-left: 4rem;
+      }
+    }
+  }
+
+  &__radio-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(0.4rem);
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid $dark-green;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      @include position-center;
+      border: 5px solid $medium-blue;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  &__control-radio > input:checked + label > span::after {
+    opacity: 1;
+  }
+
+  &__btn {
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    background-color: transparent;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border-radius: 3px;
+
+    &:hover {
+      background-image: linear-gradient(to right, $dark-green, $light-green);
+      color: $white;
+      transform: translateY(-0.25rem);
+      box-shadow: $box-shadow;
+    }
+
+    &:active {
+      transform: translateY(0.25rem);
+      box-shadow: 0 0.25rem 0.5rem rgba($black, 0.5);
+    }
+  }
+}

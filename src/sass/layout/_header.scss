@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+.heading {
+  position: absolute;
+  @include position-center;
+  @include flex(center, null, 4rem, column);
+  width: 100%;
+
+  &-prime {
+    @include flex(center, null, null, column);
+  }
+}

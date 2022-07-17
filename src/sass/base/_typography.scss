@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Roboto:wght@300;400;700;900&display=swap');
+
+body {
+  font-family: $font-roboto;
+  font-weight: $roboto-n-w;
+  line-height: 1.6;
+  color: $white;
+}
+
+::selection {
+  color: $selection;
+}
+
+.heading-prime {
+  text-transform: uppercase;
+  font-size: $fs-heading-large;
+  &--main {
+    letter-spacing: 0.25rem;
+  }
+  &--sub {
+    font-size: 1.25rem;
+    letter-spacing: 0.25rem;
+  }
+  &__btn span {
+    color: $medium-gray;
+    font-size: 1.25rem;
+    font-weight: $roboto-h-w;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+  }
+}
+
+.heading-second {
+  font-size: $fs-heading-medium;
+  text-transform: uppercase;
+  padding-inline: 1rem;
+}
+
+.sub-heading {
+  font-size: $fs-heading-small;
+  color: $dark-gray;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph {
+  font-family: $font-openSans;
+  font-size: $fs-para;
+  color: $medium-gray;
+  letter-spacing: 1px;
+}

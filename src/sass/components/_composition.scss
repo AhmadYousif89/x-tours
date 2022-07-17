@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+// Images
+.composition {
+  @include flex(center, center, 4rem, null, wrap);
+  margin-top: 4rem;
+  transition: all 0.3s;
+  margin-inline: auto;
+
+  &__img {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    max-width: 80%;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      outline: 3px solid rgba($light-orange, 0.35);
+      border-radius: 1px;
+      outline-offset: 1.5rem;
+      transition: all 0.2s;
+      &:active,
+      &:hover {
+        transform: scale(0.95);
+        outline-width: 5px;
+      }
+    }
+
+    &::after {
+      top: 0;
+      width: 25%;
+      height: 100%;
+    }
+    &:nth-child(odd)::after {
+      left: 10%;
+    }
+    &:nth-child(even)::after {
+      right: 10%;
+    }
+    &::before {
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      width: 50%;
+      height: 50%;
+    }
+    &:nth-child(odd)::before {
+      left: 0;
+    }
+    &:nth-child(even)::before {
+      right: 0;
+    }
+
+    &--img {
+      border-radius: 5px;
+      transition: all 0.2s;
+      box-shadow: $box-shadow;
+      &:active,
+      &:hover {
+        transform: scale(0.95);
+      }
+    }
+  }
+}

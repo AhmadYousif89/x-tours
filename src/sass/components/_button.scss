@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+// general button styles
+.btn {
+  position: relative;
+  color: $medium-green;
+  text-decoration: none;
+  border-radius: 5rem;
+  transition: all 0.25s;
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: 5rem;
+  }
+}
+
+// link btn styles
+.link__btn {
+  font-size: $fs-link;
+  text-transform: capitalize;
+  &:hover {
+    transition: all 0.5s;
+    transform: translate(-0.5rem, 0rem);
+    background-color: $medium-green;
+    color: $white;
+    padding: 1rem 2rem;
+  }
+}

@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.feature__box {
+  @include flex(center, null, 2rem, column);
+  font-size: $fs-default;
+  background-color: rgba($dark-gray, 0.75);
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow;
+  padding: 2rem 0;
+  transition: all 0.2s;
+  max-width: 30rem;
+
+  &:hover,
+  &:active {
+    transform: translateY(-1.5rem) scale(1.05);
+  }
+
+  &-icon {
+    transform: scale(2);
+    margin-top: 1rem;
+    background-image: linear-gradient(
+      to left bottom,
+      $off-white,
+      $medium-green
+    );
+    background-clip: text;
+    color: transparent;
+  }
+  &-heading {
+    color: $medium-green;
+    font-size: $fs-heading-small;
+    text-transform: uppercase;
+  }
+
+  &-text {
+    color: $off-white;
+    transform: scale(0.85);
+  }
+}

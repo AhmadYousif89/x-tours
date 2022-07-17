@@ -1,0 +1,5 @@
+@use '../abstracts' as *;
+
+.features__content {
+  @include flex(null, space-evenly, 2rem, null, wrap);
+}
