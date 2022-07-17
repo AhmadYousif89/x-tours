@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf public",
     "serve": "browser-sync start --server public --files public",
-    "start": "npm run copy && npm run serve",
+    "start": "npm run copy:src && npm run serve",
     "run-all": "npm-run-all clean copy --parallel watch serve",
     "build": "npm-run-all copy build:*",
     "copy": "npm-run-all --parallel copy:*",
