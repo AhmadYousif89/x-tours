@@ -2,12 +2,10 @@
   "name": "x-tours",
   "version": "1.0.0",
   "description": "Landing page for X-tours co.",
-  "main": "public/index.html",
   "scripts": {
     "clean": "rimraf public",
     "serve": "browser-sync start --server public --files public",
-    "start": "npm run build",
-    "run-all": "npm-run-all clean copy --parallel watch serve",
+    "start": "npm-run-all clean copy --parallel watch serve",
     "build": "npm-run-all copy build:*",
     "copy": "npm-run-all --parallel copy:*",
     "watch": "npm-run-all --parallel watch:*",
