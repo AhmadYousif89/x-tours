@@ -12,12 +12,13 @@
     );
   }
 
-  // Logo
   &__logo-img {
-    height: 10rem;
-    text-align: center;
+    @include flex($placeItems: center, $direction: column);
+    @include media-size($tablet-port) {
+      @include flex($placeContent: center, $direction: row);
+    }
   }
-  // Nav
+
   &__navigation {
     border-top: 1px solid $light-gray;
     padding-top: 1rem;
@@ -25,7 +26,7 @@
   }
 
   &__list {
-    @include flex(center, center, 1rem, row, wrap);
+    @include flex($placeContent: center, $gap: 1rem, $wrap: wrap);
   }
 
   &__item {

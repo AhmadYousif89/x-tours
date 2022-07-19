@@ -1,44 +1,20 @@
 @use '../abstracts' as *;
 
-// Section Header
-.header {
-  position: relative;
-  height: 90vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($light-green, 0.4),
-      $dark-green
-    ),
-    url('../../assets/images/hero.jpg');
-  background-position: top;
-  background-size: cover;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%);
-
-  &__logo {
-    position: absolute;
-    right: 0;
-    padding: 2.5rem;
-    img {
-      height: 3rem;
-    }
-  }
-}
-
 // Section About
 .about {
   background-color: $off-white;
-  padding: 24rem 0 22rem 0;
+  padding: 18rem 0 18rem 0;
   margin-top: -20vh;
 
   &__container {
-    @media (min-width: 1024px) {
-      @include flex(center, null, 5rem, null, nowrap);
+    @include media-size($tablet-land) {
+      @include flex($placeItems: center, $gap: 5rem, $wrap: nowrap);
     }
-    @include flex(null, null, 5rem, null, wrap);
+    @include flex($justifyContent: center, $gap: 5rem, $wrap: wrap);
   }
 
   &__content {
-    @include flex(null, null, 5rem, null, wrap);
+    @include flex($gap: 5rem, $wrap: wrap);
     max-width: 70rem;
   }
   .aside {
@@ -54,13 +30,27 @@
   padding: 20rem 0;
   background-image: linear-gradient(
       to right bottom,
-      rgba($light-green, 0.4),
-      $dark-green
+      rgba($light-blue, 0.5),
+      rgba($dark-green, 0.8)
     ),
-    url('../../assets/images/nat-4.jpg');
+    url('../../assets/images/nat-4-small.jpg');
   clip-path: polygon(0 0, 100% 10vh, 100% 100%, 0 95%);
   background-position: top;
   background-size: cover;
+
+  @media (min-resolution: 192dpi) and (min-width: $tablet-port),
+    (min-width: $desktop) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($light-blue, 0.5),
+        rgba($dark-green, 0.8)
+      ),
+      url('../../assets/images/nat-4.jpg');
+  }
+
+  &__content {
+    @include flex($justifyContent: space-around, $gap: 3rem, $wrap: wrap);
+  }
 
   & .col:not(:last-child) {
     margin-bottom: 6rem;

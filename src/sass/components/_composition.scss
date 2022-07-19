@@ -1,16 +1,15 @@
 @use '../abstracts' as *;
 // Images
 .composition {
-  @include flex(center, center, 4rem, null, wrap);
+  @include flex($placeContent: center, $gap: 4rem, $wrap: wrap);
   margin-top: 4rem;
   transition: all 0.3s;
-  margin-inline: auto;
 
   &__img {
     position: relative;
     isolation: isolate;
-    display: flex;
-    max-width: 80%;
+    @include flex();
+    max-width: 45%;
 
     &::after,
     &::before {

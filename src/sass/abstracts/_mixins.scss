@@ -1,17 +1,40 @@
-// apply display flex props
+// apply display flex on elements
 @mixin flex(
-  $align: null,
-  $justify: null,
+  $direction: null,
+  $wrap: null,
   $gap: null,
-  $direction: row,
-  $wrap: null
+  $alignContent: null,
+  $alignItems: null,
+  $justifyContent: null,
+  $justifyItems: null,
+  $placeContent: null,
+  $placeItems: null
 ) {
   display: flex;
   flex-direction: $direction;
   gap: $gap;
-  align-items: $align;
-  justify-content: $justify;
   flex-wrap: $wrap;
+  @if $placeContent == null {
+    @if $alignContent {
+      align-content: $alignContent;
+    }
+    @if $justifyContent {
+      justify-content: $justifyContent;
+    }
+  } @else {
+    place-content: $placeContent;
+  }
+
+  @if $placeItems == null {
+    @if $alignItems {
+      align-items: $alignItems;
+    }
+    @if $justifyItems {
+      justify-items: $justifyItems;
+    }
+  } @else {
+    place-items: $placeItems;
+  }
 }
 
 // position element center
@@ -33,7 +56,7 @@ Mobile first approach
 
 // $breakpoints :-
 $tablet-port: 768px;
-$tablet-land: 1150px;
+$tablet-land: 1200px;
 $desktop: 1400px;
 $big-desktop: 1800px;
 

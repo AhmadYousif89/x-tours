@@ -1,12 +1,48 @@
 @use '../abstracts' as *;
 
+// Section Header
+.header {
+  position: relative;
+  height: 90vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($light-blue, 0.35),
+      rgba($dark-green, 0.85)
+    ),
+    url('../../assets/images/hero-small.jpg');
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%);
+  @include media-size($tablet-land) {
+    border-radius: 20px 20px 0 0;
+  }
+  @media (min-resolution: 192dpi) and (min-width: $tablet-port),
+    (min-width: $desktop) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($light-blue, 0.35),
+        rgba($dark-green, 0.85)
+      ),
+      url('../../assets/images/hero-large.jpg');
+  }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+    padding: 2.5rem;
+    img {
+      height: 3rem;
+    }
+  }
+}
+
 .heading {
   position: absolute;
   @include position-center;
-  @include flex(center, null, 4rem, column);
+  @include flex($alignItems: center, $gap: 4rem, $direction: column);
   width: 100%;
 
   &-prime {
-    @include flex(center, null, null, column);
+    @include flex($direction: column);
   }
 }

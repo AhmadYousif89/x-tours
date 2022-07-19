@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .feature__box {
-  @include flex(center, null, 2rem, column);
+  @include flex($placeItems: center, $gap: 2rem, $direction: column);
   font-size: $fs-default;
   background-color: rgba($dark-gray, 0.75);
   border-radius: 0.5rem;

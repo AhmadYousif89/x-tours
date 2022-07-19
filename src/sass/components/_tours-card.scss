@@ -1,10 +1,7 @@
 @use '../abstracts' as *;
 
 .tours__content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 4rem;
+  @include flex($justifyContent: space-evenly, $gap: 4rem, $wrap: wrap);
 }
 
 .card {
@@ -148,7 +145,7 @@
       li {
         padding-block: 1rem;
         div {
-          @include flex(center, center, null, row);
+          @include flex($placeContent: center);
           span {
             width: 2rem;
             height: 0.5rem;
@@ -177,11 +174,11 @@
   &__cta {
     position: absolute;
     @include position-center;
-    @include flex(center, null, 10rem, column);
+    @include flex($alignItems: center, $gap: 10rem, $direction: column);
   }
 
   &__price-box {
-    @include flex(center, null, 1rem, column);
+    @include flex($alignItems: center, $gap: 1rem, $direction: column);
 
     & p:nth-child(2) {
       font-size: 4rem;

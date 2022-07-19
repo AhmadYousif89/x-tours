@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .stories__content {
-  @include flex(null, space-evenly, 5rem, null, wrap);
+  @include flex($justifyContent: space-evenly, $gap: 5rem, $wrap: wrap);
   margin: 10rem;
 }
 
@@ -10,7 +10,7 @@
   padding: 2rem;
   border-radius: 5px;
   transform: skewX(-6deg);
-  background-color: rgba($off-white, 0.8);
+  background-color: rgba($off-white, 0.5);
   max-width: 40rem;
 
   &__shape {
