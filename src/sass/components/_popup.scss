@@ -34,8 +34,7 @@
     box-shadow: $box-shadow;
     border-radius: 3px;
     opacity: 0;
-    // important
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0); // important
     transition: all 0.5s 0.2s ease;
 
     display: flex;
@@ -71,7 +70,7 @@
       background-color: rgba($light-blue, 0.5);
     }
 
-    @media (min-width: 1024px) {
+    @include media-size($tablet-land) {
       padding: 5rem;
     }
   }
@@ -79,11 +78,12 @@
   &__content-text {
     display: grid;
     gap: 2rem;
+    max-width: 60rem;
 
     .paragraph {
       hyphens: auto;
     }
-    @media (max-width: 1024px) {
+    @include media-size($tablet-land, max-width) {
       .paragraph:last-child {
         display: none;
       }
@@ -91,12 +91,13 @@
   }
 
   &__content-images {
-    @media (max-width: 720px) {
+    order: -1;
+    max-width: 32rem;
+    display: grid;
+
+    @include media-size($tablet-port, max-width) {
       display: none;
     }
-    order: -1;
-    width: 100%;
-    display: grid;
   }
   &__image {
     object-fit: cover;

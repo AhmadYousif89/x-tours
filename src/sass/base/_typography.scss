@@ -16,19 +16,26 @@ body {
 .heading-prime {
   text-transform: uppercase;
   font-size: $fs-heading-large;
+
   &--main {
-    letter-spacing: 0.25rem;
+    letter-spacing: 1rem;
   }
   &--sub {
-    font-size: 1.25rem;
-    letter-spacing: 0.25rem;
+    font-size: 1.125rem;
+    letter-spacing: 0.5rem;
+    color: $off-white;
   }
-  &__btn span {
-    color: $medium-gray;
-    font-size: 1.25rem;
-    font-weight: $roboto-h-w;
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
+  &__btn {
+    &:hover span {
+      opacity: 0.75;
+    }
+    span {
+      color: $medium-gray;
+      font-size: 1.25rem;
+      font-weight: $roboto-h-w;
+      letter-spacing: 0.1rem;
+      text-transform: capitalize;
+    }
   }
 }
 
@@ -36,6 +43,7 @@ body {
   font-size: $fs-heading-medium;
   text-transform: uppercase;
   padding-inline: 1rem;
+  margin-top: 1rem;
 }
 
 .sub-heading {

@@ -3,15 +3,15 @@
   $align: null,
   $justify: null,
   $gap: null,
-  $direction: null,
+  $direction: row,
   $wrap: null
 ) {
   display: flex;
+  flex-direction: $direction;
+  gap: $gap;
   align-items: $align;
   justify-content: $justify;
-  flex-direction: $direction;
   flex-wrap: $wrap;
-  gap: $gap;
 }
 
 // position element center
@@ -19,4 +19,26 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+// Media Query Manager
+/*
+Mobile first approach
+[0 - 768px]    : where our normal styles get applied
+768px - 1050px  : Tablet-port
+1050px - 1400px : Tablet-land
+1400px - 1800px : Desktop
+1800px - ...px  : Big-desktop
+*/
+
+// $breakpoints :-
+$tablet-port: 768px;
+$tablet-land: 1150px;
+$desktop: 1400px;
+$big-desktop: 1800px;
+
+@mixin media-size($breakpoint, $width: min-width) {
+  @media only screen and ($width: (calc($breakpoint / 16px) * 1em)) {
+    @content;
+  }
 }
