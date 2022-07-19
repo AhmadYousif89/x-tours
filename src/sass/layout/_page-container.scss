@@ -1,0 +1,7 @@
+.page-container {
+  @media (min-width: 1200px) {
+    width: min(100% - 6rem, 100%);
+    margin-inline: auto;
+    margin-top: 3rem;
+  }
+}
