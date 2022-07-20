@@ -15,7 +15,7 @@
     opacity: 1;
     visibility: visible;
   }
-
+  // close overlay
   &__bg {
     position: absolute;
     top: 0;
@@ -28,6 +28,7 @@
   }
 
   &__content {
+    @include flex;
     @include position-center;
     position: fixed;
     width: min(100% - 5rem, 100rem);
@@ -37,8 +38,6 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0); // important
     transition: all 0.5s 0.2s ease;
-
-    @include flex;
   }
 
   &:target &__content {
@@ -46,7 +45,7 @@
     transform: translate(-50%, -50%) scale(1);
   }
 
-  // close btn
+  // close modal
   &__btn {
     position: absolute;
     top: 2rem;

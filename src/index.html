@@ -10,35 +10,36 @@
     <link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
 
     <title>X-Tours | Exciting tours for adventurers</title>
+    <script defer></script>
   </head>
   <body>
     <div class="page-container">
       <!-- start Navigation -->
       <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="nav-btn" />
-        <label for="nav-btn" class="navigation__btn" id="menu">
+        <input type="checkbox" class="navigation__checkbox" id="menu" />
+        <label for="menu" class="navigation__btn" id="nav-btn">
           <span class="navigation__icon"></span>
         </label>
-        <div class="navigation__bg"></div>
+        <a class="navigation__bg"></a>
         <nav class="navigation__nav">
           <ul class="navigation__list">
             <li class="navigation__item">
-              <a href="#" class="navigation__link"> home</a>
+              <a href="#" class="navigation__link">home</a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">explore tours</a>
+              <a href="#tours" class="navigation__link">explore tours</a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">adventures</a>
+              <a href="#stories" class="navigation__link">stories</a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">book tours</a>
+              <a href="#registration" class="navigation__link">book tours</a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">about</a>
+              <a href="#about" class="navigation__link">about</a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">faq's</a>
+              <a href="#features" class="navigation__link">features</a>
             </li>
           </ul>
         </nav>
@@ -68,7 +69,7 @@
       <!-- start Main content -->
       <main class="main">
         <!-- start section About -->
-        <section class="about">
+        <section class="about" id="about">
           <div class="u-text-c u-mb-large">
             <h2 class="heading-second">
               Exciting tours with breathtaking scenes
@@ -113,48 +114,55 @@
 
             <!-- column 2 of 2 -->
             <div class="col">
-              <div class="about__images">
-                <!-- Density and resolution switching -->
-                <div class="composition">
-                  <!-- image 1 -->
-                  <div class="composition__img">
-                    <img
-                      srcset="
-                        assets/images/nat-1.jpg        300w,
-                        assets/images/nat-1-large.jpg 1000w
-                      "
-                      sizes="(min-width: 48em) 30vw, 300px"
-                      src="assets/images/nat-1.jpg"
-                      alt="nat 1"
-                      class="composition__img--img"
-                    />
-                  </div>
-                  <!-- image 2 -->
-                  <div class="composition__img">
-                    <img
-                      srcset="
-                        assets/images/nat-2.jpg        300w,
-                        assets/images/nat-2-large.jpg 1000w
-                      "
-                      sizes="(min-width: 48em) 30vw, 300px"
-                      src="assets/images/nat-2.jpg"
-                      alt="nat 2"
-                      class="composition__img--img"
-                    />
-                  </div>
-                  <!-- image 3 -->
-                  <div class="composition__img">
-                    <img
-                      srcset="
-                        assets/images/nat-3.jpg        300w,
-                        assets/images/nat-3-large.jpg 1000w
-                      "
-                      sizes="(min-width: 48em) 30vw, 300px"
-                      src="assets/images/nat-3.jpg"
-                      alt="nat 3"
-                      class="composition__img--img"
-                    />
-                  </div>
+              <!-- Density and resolution switching -->
+              <div class="composition">
+                <!-- image 1 -->
+                <div class="composition__img">
+                  <img
+                    srcset="
+                      assets/images/nat-1.jpg        300w,
+                      assets/images/nat-1-large.jpg 1000w
+                    "
+                    sizes="(min-width: 48em) 30vw, 300px"
+                    src="assets/images/nat-1.jpg"
+                    alt="nat 1"
+                    class="composition__img-image"
+                  />
+                  <p class="composition__img-text">
+                    between the woods<span>Lorem, ipsum dolor.</span>
+                  </p>
+                </div>
+                <!-- image 2 -->
+                <div class="composition__img">
+                  <img
+                    srcset="
+                      assets/images/nat-2.jpg        300w,
+                      assets/images/nat-2-large.jpg 1000w
+                    "
+                    sizes="(min-width: 48em) 30vw, 300px"
+                    src="assets/images/nat-2.jpg"
+                    alt="nat 2"
+                    class="composition__img-image"
+                  />
+                  <p class="composition__img-text">
+                    race to the end <span>Lorem, ipsum dolor.</span>
+                  </p>
+                </div>
+                <!-- image 3 -->
+                <div class="composition__img">
+                  <img
+                    srcset="
+                      assets/images/nat-3.jpg        300w,
+                      assets/images/nat-3-large.jpg 1000w
+                    "
+                    sizes="(min-width: 48em) 30vw, 300px"
+                    src="assets/images/nat-3.jpg"
+                    alt="nat 3"
+                    class="composition__img-image"
+                  />
+                  <p class="composition__img-text">
+                    top of the mountain <span>Lorem, ipsum dolor.</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -163,7 +171,7 @@
         <!-- end section About -->
 
         <!-- start section Features -->
-        <section class="features">
+        <section class="features" id="features">
           <div class="features__content u-section-c">
             <!-- column 1 of 4 -->
             <div class="col">
@@ -226,7 +234,7 @@
         <!-- end section Features -->
 
         <!-- start section Tours -->
-        <section class="tours" id="section-tours">
+        <section class="tours" id="tours">
           <div class="u-text-c u-mb-large">
             <h2 class="heading-second">most popular tours</h2>
           </div>
@@ -353,7 +361,7 @@
         <!-- end section Tours -->
 
         <!-- start section Stories -->
-        <section class="stories">
+        <section class="stories" id="stories">
           <!-- playback background video -->
           <div class="bg-video">
             <video
@@ -467,7 +475,7 @@
         <!-- end section Stories -->
 
         <!-- start section Registration -->
-        <section class="registration" id="booking">
+        <section class="registration" id="registration">
           <div class="booking">
             <div class="booking__form">
               <form class="form">
@@ -528,7 +536,7 @@
 
       <!-- start Modal -->
       <div class="popup" id="popup">
-        <!-- popup__bg will act as overlay to close the popup -->
+        <!-- popup__bg will act as an overlay to close the modal -->
         <a href="#menu" class="popup__bg"></a>
         <div class="popup__content">
           <a href="#menu" class="popup__btn">x</a>
@@ -554,7 +562,7 @@
               </p>
             </div>
             <div class="u-mt-medium">
-              <a href="#booking" class="btn link__btn">Book now &rarr;</a>
+              <a href="#registration" class="btn link__btn">Book now &rarr;</a>
             </div>
           </div>
           <div class="popup__content-images">
@@ -605,10 +613,10 @@
                 <a href="#" class="footer__link">home</a>
               </li>
               <li class="footer__item">
-                <a href="#" class="footer__link">tours</a>
+                <a href="#tours" class="footer__link">tours</a>
               </li>
               <li class="footer__item">
-                <a href="#" class="footer__link">about</a>
+                <a href="#about" class="footer__link">about</a>
               </li>
               <li class="footer__item">
                 <a href="#" class="footer__link">contact us</a>
@@ -623,7 +631,7 @@
         <div class="col">
           <p class="footer__copyright">
             copyrights &copy; reserved to original author. <br />
-            designed by <a href="#" class="footer__link">Ahmad Yousif</a>
+            designed by <a href="" class="footer__link">Ahmad Yousif</a>
           </p>
         </div>
       </div>
